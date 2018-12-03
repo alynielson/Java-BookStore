@@ -52,13 +52,17 @@ public class ControllerServlet extends HttpServlet {
 			switch(action) {
 				case "/admin":
 					 showBookAdmin(request, response);
-           break;
-			  case "/new":
+           		break;
+			  	case "/new":
 					showNewForm(request, response);
-          break;
+          		break;
 				case "/insert":
 					insertBook(request, response);
-          break;
+          		break;
+				case "/delete":
+					deleteBook(request, response);
+					break;
+
         default:
 				   listBooks(request, response);
            break;
@@ -113,6 +117,10 @@ public class ControllerServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("This is the doPost() method!");
 		doGet(request, response);
+
+	}
+
+	private void deleteBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
 
