@@ -101,4 +101,13 @@ public class BookDAO {
             throw new RuntimeException("Could not delete. Please try again.");
         }
     }
+
+    public void updateBook(Book book) {
+        try {
+            PreparedStatement updateQuery = jdbcConnection.prepareStatement("UPDATE book SET title = ?, author = ?," +
+                    "price = ? WHERE  id = ?");
+        }catch (SQLException e){
+            throw new RuntimeException("Could not update. Please try again.");
+        }
+    }
 }
