@@ -59,6 +59,8 @@ public class ControllerServlet extends HttpServlet {
 				case "/insert":
 					insertBook(request, response);
           		break;
+				case "/edit":
+					showEditForm(request, response);
 				case "/delete":
 					deleteBook(request, response);
 					break;
