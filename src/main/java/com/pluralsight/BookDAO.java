@@ -106,7 +106,14 @@ public class BookDAO {
         try {
             PreparedStatement updateQuery = jdbcConnection.prepareStatement("UPDATE book SET title = ?, author = ?," +
                     "price = ? WHERE  id = ?");
-        }catch (SQLException e){
+            updateQuery.setString(1, book.getTitle());
+            updateQuery.setString(2, book.getAuthor());
+            updateQuery.setFloat(3, book.getPrice());
+            updateQuery.setInt(4, book.getId());
+            updateQuery.executeUpdate();
+            updateQuery.close();
+
+        } catch (SQLException e){
             throw new RuntimeException("Could not update. Please try again.");
         }
     }
